@@ -10,8 +10,12 @@ import { useHistory, useRouteMatch } from 'react-router-dom';
 const MenuItem: FC<
   { Icon: FC<any>; active?: boolean } & HTMLProps<HTMLDivElement>
 > = ({ Icon, active, onClick }) => (
-  <div onClick={onClick} className='pt-1 flex-grow flex h-full justify-center'>
-    {active ? <Icon color='rgb(37, 99, 235)' /> : <Icon />}
+  <div onClick={onClick} className='pt-2 flex-grow flex h-full justify-center'>
+    {active ? (
+      <Icon color='rgb(37, 99, 235)' width='1.2rem' />
+    ) : (
+      <Icon width='1.2rem' />
+    )}
   </div>
 );
 

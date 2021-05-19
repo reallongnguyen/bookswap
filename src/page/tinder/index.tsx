@@ -3,7 +3,7 @@ import { FC } from 'react';
 const Tinder: FC = () => {
   return (
     <div className='h-full relative'>
-      <div className='absolute w-full h-2/5 bg-gradient-to-b from-[#fd0e42] to-[#c30f31] rounded-b-[2.5rem]'></div>
+      <div className='absolute w-full h-1/2 -top-12 bg-gradient-to-b from-[#fd0e42] to-[#c30f31] rounded-b-[2.5rem]'></div>
       <div className='absolute top-12 w-full px-6 text-white font-semibold text-3xl'>
         Discover
       </div>
@@ -28,7 +28,7 @@ const Tinder: FC = () => {
           </div>
         </div>
         <div className='mt-6'>Tác giả: Yuval Noah Harari</div>
-        <div className='mt-4 text-justify pb-4'>
+        <div className='mt-2 text-justify pb-4'>
           <p>
             Sapiens, đưa chúng ta vào một chuyến đi kinh ngạc qua toàn bộ lịch
             sử loài người, từ những gốc rễ tiến hóa của nó đến thời đại của chủ
