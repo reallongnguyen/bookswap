@@ -10,7 +10,7 @@ import { useHistory, useRouteMatch } from 'react-router-dom';
 const MenuItem: FC<
   { Icon: FC<any>; active?: boolean } & HTMLProps<HTMLDivElement>
 > = ({ Icon, active, onClick }) => (
-  <div onClick={onClick}>
+  <div onClick={onClick} className='pt-1 flex-grow flex h-full justify-center'>
     {active ? <Icon color='rgb(37, 99, 235)' /> : <Icon />}
   </div>
 );
@@ -24,7 +24,7 @@ const TabBar: FC = () => {
   const handleSelectMenu = (path: string) => () => history.push(path);
 
   return (
-    <div className='w-full flex justify-around items-center'>
+    <div className='w-full h-full flex justify-around items-center'>
       <MenuItem
         Icon={AlbumsOutline}
         active={isActive('/')}

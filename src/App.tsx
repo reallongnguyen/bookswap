@@ -21,7 +21,7 @@ function App() {
                   <Route path='/profile'>profile</Route>
                 </Switch>
               </div>
-              <div className='h-16 pt-1 border-t border-gray-200 bg-white'>
+              <div className='h-16 border-t border-gray-200 bg-white'>
                 <TabBar />
               </div>
             </div>
