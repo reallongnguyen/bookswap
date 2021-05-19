@@ -12,9 +12,9 @@ const MenuItem: FC<
 > = ({ Icon, active, onClick }) => (
   <div onClick={onClick} className='pt-2 flex-grow flex h-full justify-center'>
     {active ? (
-      <Icon color='rgb(37, 99, 235)' width='1.2rem' />
+      <Icon color='rgb(37, 99, 235)' width='28px' height='28px' />
     ) : (
-      <Icon width='1.2rem' />
+      <Icon width='28px' height='28px' />
     )}
   </div>
 );

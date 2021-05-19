@@ -4,7 +4,7 @@ import Tinder from './page/tinder';
 
 function App() {
   return (
-    <div className='h-screen w-screen'>
+    <div className='h-screen w-screen bg-gray-50'>
       <BrowserRouter>
         <Switch>
           <Route path='/login'>login</Route>
@@ -13,7 +13,7 @@ function App() {
               className='h-full grid'
               style={{ gridTemplateRows: '1fr auto' }}
             >
-              <div className='overflow-hidden overflow-y-auto'>
+              <div className='overflow-hidden'>
                 <Switch>
                   <Route path='/' exact component={Tinder} />
                   <Route path='/messenger'>messenger</Route>
@@ -21,7 +21,7 @@ function App() {
                   <Route path='/profile'>profile</Route>
                 </Switch>
               </div>
-              <div className='h-20 border-t border-gray-200 bg-white'>
+              <div className='h-20 border-t border-gray-200'>
                 <TabBar />
               </div>
             </div>
