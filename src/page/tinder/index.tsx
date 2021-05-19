@@ -1,10 +1,53 @@
-import { FC } from 'react';
+import { FC, useEffect, useRef } from 'react';
+import { useSpring, animated } from '@react-spring/web';
 
 const Tinder: FC = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const topBGMaxHeight = window.innerHeight * 0.4;
+  const [topBGStyle, topBGAnime] = useSpring(() => ({
+    height: topBGMaxHeight,
+    borderBottomLeftRadius: 40,
+    borderBottomRightRadius: 40,
+  }));
+
+  useEffect(() => {
+    if (!scrollRef.current) {
+      return;
+    }
+
+    const handleScroll = () => {
+      const scrollTop = scrollRef.current?.scrollTop || 0;
+      const rounded = Math.max(
+        4,
+        (Math.max(topBGMaxHeight - scrollTop * 0.6, 0) / topBGMaxHeight) * 40
+      );
+
+      topBGAnime({
+        height: Math.max(0, topBGMaxHeight - scrollTop * 0.8),
+        borderBottomLeftRadius: rounded,
+        borderBottomRightRadius: rounded,
+      });
+
+      if (scrollTop * 0.5 > topBGMaxHeight) {
+        topBGAnime.stop();
+      }
+    };
+
+    const scrollEle = scrollRef.current;
+    scrollEle.addEventListener('scroll', handleScroll);
+
+    return () => {
+      scrollEle.removeEventListener('scroll', handleScroll);
+    };
+  }, [topBGAnime, topBGMaxHeight]);
+
   return (
-    <div className='h-full relative'>
-      <div className='absolute w-full h-2/5 bg-gradient-to-b from-[#fd0e42] to-[#c30f31] rounded-b-[2.5rem]'></div>
-      <div className='absolute top-12 w-full px-6 text-white font-semibold text-3xl'>
+    <div ref={scrollRef} className='h-full relative overflow-y-auto'>
+      <animated.div
+        className='fixed w-full bg-gradient-to-b from-[#fd0e42] to-[#c30f31]'
+        style={topBGStyle}
+      />
+      <div className='absolute top-12 w-full px-6 pb-2 text-white font-semibold text-3xl z-30'>
         Discover
       </div>
       <div className='absolute top-24 w-full px-6'>
@@ -16,19 +59,43 @@ const Tinder: FC = () => {
               alt=''
             />
           </div>
-          <div className='absolute w-full bottom-0 h-16 flex items-center bg-white rounded-xl'>
-            <div className='px-4'>
+          <div className='absolute w-full bottom-0 flex items-center bg-white rounded-xl'>
+            <div className='px-4 py-3'>
               <div className='text-lg font-semibold'>
                 Sapiens - Lược sử về loài người
               </div>
-              <div className='-mt-1 text-gray-400 text-sm font-light'>
-                Thanh Xuân, Hà Nội
+              <div className='text-gray-400 text-sm font-light'>
+                Li - Thanh Xuân, Hà Nội
               </div>
             </div>
           </div>
         </div>
-        <div className='mt-4 flex justify-around'>
-          <button className='outline-none active:outline-none focus:outline-none active:shadow-sm shadow-md border-gray-200 border rounded-full w-14 h-14'></button>
+        <div className='mt-6'>Tác giả: Yuval Noah Harari</div>
+        <div className='mt-2 text-justify pb-4 tweet'>
+          <p>
+            Sapiens, đưa chúng ta vào một chuyến đi kinh ngạc qua toàn bộ lịch
+            sử loài người, từ những gốc rễ tiến hóa của nó đến thời đại của chủ
+            nghĩa tư bản và kỹ thuật di truyền, để khám phá tại sao chúng ta
+            đang trong những điều kiện sinh sống hiện tại.
+          </p>
+          <p>
+            Sapiens, đưa chúng ta vào một chuyến đi kinh ngạc qua toàn bộ lịch
+            sử loài người, từ những gốc rễ tiến hóa của nó đến thời đại của chủ
+            nghĩa tư bản và kỹ thuật di truyền, để khám phá tại sao chúng ta
+            đang trong những điều kiện sinh sống hiện tại.
+          </p>
+          <p>
+            Sapiens, đưa chúng ta vào một chuyến đi kinh ngạc qua toàn bộ lịch
+            sử loài người, từ những gốc rễ tiến hóa của nó đến thời đại của chủ
+            nghĩa tư bản và kỹ thuật di truyền, để khám phá tại sao chúng ta
+            đang trong những điều kiện sinh sống hiện tại.
+          </p>
+          <p>
+            Sapiens, đưa chúng ta vào một chuyến đi kinh ngạc qua toàn bộ lịch
+            sử loài người, từ những gốc rễ tiến hóa của nó đến thời đại của chủ
+            nghĩa tư bản và kỹ thuật di truyền, để khám phá tại sao chúng ta
+            đang trong những điều kiện sinh sống hiện tại.
+          </p>
         </div>
       </div>
     </div>
