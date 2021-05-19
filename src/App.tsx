@@ -1,5 +1,8 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import TabBar from './component/TabBar';
+import Login from './page/Signin/Signin';
+import Signin from './page/Signin/Signin';
+import Signup from './page/Signup/Signup';
 import Tinder from './page/tinder';
 
 function App() {
@@ -7,7 +10,8 @@ function App() {
     <div className='h-screen w-screen bg-gray-50'>
       <BrowserRouter>
         <Switch>
-          <Route path='/login'>login</Route>
+          <Route path='/login' component={Signin} />
+          <Route path='/signup' component={Signup} /> 
           <Route path='*'>
             <div
               className='h-full grid'
