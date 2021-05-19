@@ -16,19 +16,25 @@ const Tinder: FC = () => {
               alt=''
             />
           </div>
-          <div className='absolute w-full bottom-0 h-16 flex items-center bg-white rounded-xl'>
-            <div className='px-4'>
+          <div className='absolute w-full bottom-0 flex items-center bg-white rounded-xl'>
+            <div className='px-4 py-3'>
               <div className='text-lg font-semibold'>
                 Sapiens - Lược sử về loài người
               </div>
-              <div className='-mt-1 text-gray-400 text-sm font-light'>
-                Thanh Xuân, Hà Nội
+              <div className='text-gray-400 text-sm font-light'>
+                Li - Thanh Xuân, Hà Nội
               </div>
             </div>
           </div>
         </div>
-        <div className='mt-4 flex justify-around'>
-          <button className='outline-none active:outline-none focus:outline-none active:shadow-sm shadow-md border-gray-200 border rounded-full w-14 h-14'></button>
+        <div className='mt-6'>Tác giả: Yuval Noah Harari</div>
+        <div className='mt-4 text-justify pb-4'>
+          <p>
+            Sapiens, đưa chúng ta vào một chuyến đi kinh ngạc qua toàn bộ lịch
+            sử loài người, từ những gốc rễ tiến hóa của nó đến thời đại của chủ
+            nghĩa tư bản và kỹ thuật di truyền, để khám phá tại sao chúng ta
+            đang trong những điều kiện sinh sống hiện tại.
+          </p>
         </div>
       </div>
     </div>
