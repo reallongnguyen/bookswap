@@ -22,7 +22,7 @@ const Signup: FC = () => {
             <input className="w-full p-3 mt-3 border border-gray-200 rounded" type="text" placeholder="fullname" />
             <input className="w-full p-3 mt-3 border border-gray-200 rounded" type="password" placeholder="password" />
             <input className="w-full p-3 mt-3 border border-gray-200 rounded" type="password" placeholder="Password confirm" />
-            <input className="w-full p-3 mt-3 border border-gray-200 rounded" type="password" placeholder="Address" />
+            <input className="w-full p-3 mt-3 border border-gray-200 rounded" type="text" placeholder="Address" />
             <div className="flex justify-between">
 
                 <button onClick={ signupReturnSignin} className=" mt-12 rounded px-3 py-2 border border-gray-200">

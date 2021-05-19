@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import TabBar from './component/TabBar';
+import AddBook from './page/AddBook/AddBook';
+import Library from './page/BookLibrary/BookLibrary';
 import Login from './page/Signin/Signin';
 import Signin from './page/Signin/Signin';
 import Signup from './page/Signup/Signup';
@@ -21,7 +23,8 @@ function App() {
                 <Switch>
                   <Route path='/' exact component={Tinder} />
                   <Route path='/messenger'>messenger</Route>
-                  <Route path='/library'>library</Route>
+                  <Route path='/library'component={Library} />
+                  <Route path='/add'component={AddBook} />
                   <Route path='/profile'>profile</Route>
                 </Switch>
               </div>
