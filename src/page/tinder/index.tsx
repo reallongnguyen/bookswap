@@ -6,8 +6,6 @@ const Tinder: FC = () => {
   const topBGMaxHeight = window.innerHeight * 0.45;
   const [topBGStyle, topBGAnime] = useSpring(() => ({
     height: topBGMaxHeight,
-    borderBottomLeftRadius: 40,
-    borderBottomRightRadius: 40,
   }));
 
   useEffect(() => {
@@ -17,15 +15,10 @@ const Tinder: FC = () => {
 
     const handleScroll = () => {
       const scrollTop = scrollRef.current?.scrollTop || 0;
-      const rounded = Math.max(
-        4,
-        (Math.max(topBGMaxHeight - scrollTop * 0.6, 0) / topBGMaxHeight) * 40
-      );
 
-      topBGAnime({
+      topBGAnime.start({
         height: Math.max(0, topBGMaxHeight - scrollTop * 0.8),
-        borderBottomLeftRadius: rounded,
-        borderBottomRightRadius: rounded,
+        config: { duration: 75 },
       });
     };
 
@@ -40,7 +33,7 @@ const Tinder: FC = () => {
   return (
     <div ref={scrollRef} className='h-full relative overflow-y-auto'>
       <animated.div
-        className='fixed w-full bg-gradient-to-b from-[#fd0e42] to-[#c30f31]'
+        className='fixed w-full bg-gradient-to-b from-[#fd0e42] to-[#c30f31] rounded-b-[2.5rem]'
         style={topBGStyle}
       />
       <div className='absolute top-12 w-full px-6 pb-2 text-white font-semibold text-3xl z-30'>
