@@ -3,7 +3,7 @@ import { useSpring, animated } from '@react-spring/web';
 
 const Tinder: FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const topBGMaxHeight = window.innerHeight * 0.4;
+  const topBGMaxHeight = window.innerHeight * 0.45;
   const [topBGStyle, topBGAnime] = useSpring(() => ({
     height: topBGMaxHeight,
     borderBottomLeftRadius: 40,
@@ -27,10 +27,6 @@ const Tinder: FC = () => {
         borderBottomLeftRadius: rounded,
         borderBottomRightRadius: rounded,
       });
-
-      if (scrollTop * 0.5 > topBGMaxHeight) {
-        topBGAnime.stop();
-      }
     };
 
     const scrollEle = scrollRef.current;
@@ -54,7 +50,7 @@ const Tinder: FC = () => {
         <div className='relative'>
           <div className='aspect-w-3 aspect-h-4 object-cover'>
             <img
-              className='rounded-xl shadow-md'
+              className='rounded-xl shadow-around'
               src='https://cdn2.tieudungplus.vn/media/uploaded/27/2017/07/17/IMG_0735.jpg'
               alt=''
             />
