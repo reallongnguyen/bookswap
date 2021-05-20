@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import TabBar from './component/TabBar';
 import AddBook from './page/AddBook/AddBook';
 import Library from './page/BookLibrary/BookLibrary';
+import Profile from './page/Profile';
 import Signin from './page/Signin/Signin';
 import Signup from './page/Signup/Signup';
 import Tinder from './page/tinder';
@@ -24,7 +25,9 @@ function App() {
                   <Route path='/messenger'>messenger</Route>
                   <Route path='/library' component={Library} />
                   <Route path='/add' component={AddBook} />
-                  <Route path='/profile'>profile</Route>
+                  <Route path='/profile'>
+                    <Profile />
+                  </Route>
                 </Switch>
               </div>
               <div className='h-20 border-t border-gray-200'>
