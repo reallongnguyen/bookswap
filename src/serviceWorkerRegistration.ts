@@ -68,7 +68,6 @@ function registerValidSW(swUrl: string, config?: Config) {
       // check new version when visibility change
       document.addEventListener('visibilitychange', () => {
         if (document.visibilityState === 'visible') {
-          console.log('Check new version on visibility change');
           registration.update();
         }
       });

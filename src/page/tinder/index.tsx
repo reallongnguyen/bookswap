@@ -17,7 +17,7 @@ const Tinder: FC = () => {
       const scrollTop = scrollRef.current?.scrollTop || 0;
 
       topBGAnime.start({
-        height: Math.max(0, topBGMaxHeight - scrollTop * 0.8),
+        height: Math.max(0, topBGMaxHeight - scrollTop * 0.75),
         config: { duration: 75 },
       });
     };
