@@ -36,7 +36,7 @@ const Tinder: FC = () => {
         className='fixed w-full bg-gradient-to-b from-[#fd0e42] to-[#c30f31] rounded-b-[2.5rem]'
         style={topBGStyle}
       />
-      <div className='absolute top-12 w-full px-6 pb-2 text-white font-semibold text-3xl z-30'>
+      <div className='absolute top-8 w-full px-6 pb-2 text-white font-semibold text-3xl z-30'>
         Discover
       </div>
       <div className='absolute top-24 w-full px-6'>

@@ -63,7 +63,9 @@ function registerValidSW(swUrl: string, config?: Config) {
   navigator.serviceWorker
     .register(swUrl)
     .then((registration) => {
-      registration.update();
+      setTimeout(() => {
+        registration.update();
+      }, 20000);
 
       // check new version when visibility change
       document.addEventListener('visibilitychange', () => {
