@@ -11,7 +11,7 @@ const Profile: FC = () => {
   });
 
   return (
-    <div className='h-full'>
+    <div className='h-full overflow-y-auto'>
       <div className='flex flex-col items-center mt-16'>
         <div className='h-48 w-48 rounded-full border-gray-200 border-2 object-cover'>
           <img

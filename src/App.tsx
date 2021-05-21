@@ -23,8 +23,8 @@ function App() {
                 <Switch>
                   <Route path='/' exact component={Tinder} />
                   <Route path='/messenger'>messenger</Route>
-                  <Route path='/library' component={Library} />
-                  <Route path='/add' component={AddBook} />
+                  <Route path='/library' exact component={Library} />
+                  <Route path='/library/add' component={AddBook} />
                   <Route path='/profile'>
                     <Profile />
                   </Route>

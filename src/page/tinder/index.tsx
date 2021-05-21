@@ -12,9 +12,7 @@ const Tinder: FC = () => {
         'https://cdn2.tieudungplus.vn/media/uploaded/27/2017/07/17/IMG_0735.jpg',
       tweet: `
         <p>Sapiens, đưa chúng ta vào một chuyến đi kinh ngạc qua toàn bộ lịch
-        sử loài người, từ những gốc rễ tiến hóa của nó đến thời đại của chủ
-        nghĩa tư bản và kỹ thuật di truyền, để khám phá tại sao chúng ta
-        đang trong những điều kiện sinh sống hiện tại.</p>
+        sử loài người...</p>
       `,
       owner: {
         name: 'Li',
@@ -28,9 +26,7 @@ const Tinder: FC = () => {
         'https://cdn2.tieudungplus.vn/media/uploaded/27/2017/07/17/IMG_0735.jpg',
       tweet: `
         <p>Sapiens, đưa chúng ta vào một chuyến đi kinh ngạc qua toàn bộ lịch
-        sử loài người, từ những gốc rễ tiến hóa của nó đến thời đại của chủ
-        nghĩa tư bản và kỹ thuật di truyền, để khám phá tại sao chúng ta
-        đang trong những điều kiện sinh sống hiện tại.</p>
+        sử loài người...</p>
       `,
       owner: {
         name: 'Li',
@@ -44,9 +40,7 @@ const Tinder: FC = () => {
         'https://cdn2.tieudungplus.vn/media/uploaded/27/2017/07/17/IMG_0735.jpg',
       tweet: `
         <p>Sapiens, đưa chúng ta vào một chuyến đi kinh ngạc qua toàn bộ lịch
-        sử loài người, từ những gốc rễ tiến hóa của nó đến thời đại của chủ
-        nghĩa tư bản và kỹ thuật di truyền, để khám phá tại sao chúng ta
-        đang trong những điều kiện sinh sống hiện tại.</p>
+        sử loài người...</p>
       `,
       owner: {
         name: 'Li',
@@ -60,9 +54,7 @@ const Tinder: FC = () => {
         'https://cdn2.tieudungplus.vn/media/uploaded/27/2017/07/17/IMG_0735.jpg',
       tweet: `
         <p>Sapiens, đưa chúng ta vào một chuyến đi kinh ngạc qua toàn bộ lịch
-        sử loài người, từ những gốc rễ tiến hóa của nó đến thời đại của chủ
-        nghĩa tư bản và kỹ thuật di truyền, để khám phá tại sao chúng ta
-        đang trong những điều kiện sinh sống hiện tại.</p>
+        sử loài người...</p>
       `,
       owner: {
         name: 'Li',
@@ -76,9 +68,7 @@ const Tinder: FC = () => {
         'https://cdn2.tieudungplus.vn/media/uploaded/27/2017/07/17/IMG_0735.jpg',
       tweet: `
         <p>Sapiens, đưa chúng ta vào một chuyến đi kinh ngạc qua toàn bộ lịch
-        sử loài người, từ những gốc rễ tiến hóa của nó đến thời đại của chủ
-        nghĩa tư bản và kỹ thuật di truyền, để khám phá tại sao chúng ta
-        đang trong những điều kiện sinh sống hiện tại.</p>
+        sử loài người...</p>
       `,
       owner: {
         name: 'Li',
@@ -98,7 +88,8 @@ const Tinder: FC = () => {
   const [styles, booksAnime] = useSprings(books.length, (i) => ({
     left: i * width,
     display: 'block',
-    config: { duration: 300 },
+    touchAction: 'none',
+    config: { duration: 500 },
   }));
 
   const resetBooks = async () => {
@@ -154,7 +145,7 @@ const Tinder: FC = () => {
         return;
       }
 
-      if (active && Math.abs(mx) >= width * 0.2) {
+      if (active && Math.abs(mx) >= width * 0.08) {
         cancel();
         console.log(currentBookIdx.current);
         if (currentBookIdx.current === books.length - 1) {
@@ -177,7 +168,7 @@ const Tinder: FC = () => {
         return {
           left: (i - currentBookIdx.current) * width + (active ? mx : 0),
           display: 'block',
-          config: { duration: 300 },
+          config: { duration: 500 },
         };
       });
     }
@@ -232,7 +223,7 @@ const Tinder: FC = () => {
           style={style}
           key={i}
         >
-          <div className='relative' style={{ touchAction: 'none' }}>
+          <div className='relative'>
             <div className='aspect-w-3 aspect-h-4 object-cover'>
               <img
                 className='rounded-xl shadow-around'
