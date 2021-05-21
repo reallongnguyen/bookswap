@@ -97,7 +97,6 @@ const Tinder: FC = () => {
   const width = window.innerWidth;
   const [styles, booksAnime] = useSprings(books.length, (i) => ({
     left: i * width,
-    touchAction: 'none',
     display: 'block',
     config: { duration: 300 },
   }));
@@ -155,7 +154,7 @@ const Tinder: FC = () => {
         return;
       }
 
-      if (active && Math.abs(mx) > width * 0.5) {
+      if (active && Math.abs(mx) >= width * 0.2) {
         cancel();
         console.log(currentBookIdx.current);
         if (currentBookIdx.current === books.length - 1) {
@@ -233,7 +232,7 @@ const Tinder: FC = () => {
           style={style}
           key={i}
         >
-          <div className='relative'>
+          <div className='relative' style={{ touchAction: 'none' }}>
             <div className='aspect-w-3 aspect-h-4 object-cover'>
               <img
                 className='rounded-xl shadow-around'
@@ -256,7 +255,7 @@ const Tinder: FC = () => {
             dangerouslySetInnerHTML={{
               __html: getBookAt(i).tweet,
             }}
-          ></div>
+          />
         </animated.div>
       ))}
     </div>
