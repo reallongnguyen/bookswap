@@ -69,6 +69,22 @@ const Tinder: FC = () => {
         address: 'Ứng Hoà, Hà Nội',
       },
     },
+    {
+      name: 'Sapiens - Lược sử về loài người 5',
+      author: 'Yuval Noah Harari',
+      cover:
+        'https://cdn2.tieudungplus.vn/media/uploaded/27/2017/07/17/IMG_0735.jpg',
+      tweet: `
+        <p>Sapiens, đưa chúng ta vào một chuyến đi kinh ngạc qua toàn bộ lịch
+        sử loài người, từ những gốc rễ tiến hóa của nó đến thời đại của chủ
+        nghĩa tư bản và kỹ thuật di truyền, để khám phá tại sao chúng ta
+        đang trong những điều kiện sinh sống hiện tại.</p>
+      `,
+      owner: {
+        name: 'Li',
+        address: 'Ứng Hoà, Hà Nội',
+      },
+    },
   ]);
   const currentBookIdx = useRef(0);
 
@@ -83,21 +99,50 @@ const Tinder: FC = () => {
     left: i * width,
     touchAction: 'none',
     display: 'block',
-    config: { duration: 200 },
+    config: { duration: 300 },
   }));
 
-  const resetBooks = () => {
+  const resetBooks = async () => {
     console.log('reset');
 
+    await Promise.all(
+      booksAnime.start((i) => {
+        if (i === 0) {
+          return {
+            display: 'block',
+            left: width,
+            config: { duration: 0 },
+          };
+        }
+      })
+    );
+
     currentBookIdx.current = 0;
+    await Promise.all(
+      booksAnime.start((i) => {
+        if (i === 0) {
+          return {
+            left: i * width,
+            display: 'block',
+            config: { duration: 300 },
+          };
+        }
+        if (i === books.length - 1) {
+          return {
+            left: -width,
+            display: 'block',
+            config: { duration: 300 },
+          };
+        }
+      })
+    );
+
     booksAnime.start((i) => {
-      if (i > 1) {
-        return { display: 'none', left: i * width, config: { duration: 0 } };
-      }
+      const display = i < 2 ? 'block' : 'none';
 
       return {
         left: i * width,
-        display: 'block',
+        display,
         config: { duration: 0 },
       };
     });
@@ -110,7 +155,7 @@ const Tinder: FC = () => {
         return;
       }
 
-      if (active && Math.abs(mx) > width * 0.3) {
+      if (active && Math.abs(mx) > width * 0.5) {
         cancel();
         console.log(currentBookIdx.current);
         if (currentBookIdx.current === books.length - 1) {
@@ -133,7 +178,7 @@ const Tinder: FC = () => {
         return {
           left: (i - currentBookIdx.current) * width + (active ? mx : 0),
           display: 'block',
-          config: { duration: 200 },
+          config: { duration: 300 },
         };
       });
     }
