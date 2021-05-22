@@ -46,8 +46,7 @@ const Library: FC = () => {
     {
       name: '万延元年のフットボール',
       author: '大江健三郎',
-      cover:
-        'https://images-na.ssl-images-amazon.com/images/I/71GY0u4xCKL.jpg',
+      cover: 'https://images-na.ssl-images-amazon.com/images/I/71GY0u4xCKL.jpg',
       tweet: `
             <p>友人の死に導かれ夜明けの穴にうずくまる僕。地獄を所有し、安保闘争で傷ついた鷹四。障害児を出産した菜採子。苦渋に満たち登場人物たちが、四国の谷間の村をさして軽快に出発した。万延元年の村の一揆をなぞるように、神話の森に暴動が起る。幕末から現代につなぐ民衆の心をみごとに形象化し、戦後世代の切実な体験と希求を結実させた画期的長編。谷崎賞受賞。</p>
           `,
@@ -59,8 +58,7 @@ const Library: FC = () => {
     {
       name: '孤島の鬼',
       author: '江戸川乱歩',
-      cover:
-        'https://cdn.kdkw.jp/cover_1000/200901/200901000542.jpg',
+      cover: 'https://cdn.kdkw.jp/cover_1000/200901/200901000542.jpg',
       tweet: `
             <p>初代は3歳で親に捨てられた。お守り代わりの古い系図帳だけが初代の身元の手がかりだ。そんな初代にひかれ蓑浦は婚約を決意するが、蓑浦の先輩で同性愛者の諸戸が初代に突然求婚した。諸戸はかつて蓑浦に恋していた男。蓑浦は、諸戸が嫉妬心からわざと初代に求婚したのではないかと疑う。そんなある日自宅で初代が殺された。これは恐ろしく壮大な物語の幕開けに過ぎなかった―。</p>
           `,
@@ -94,15 +92,17 @@ const Library: FC = () => {
         {books.map((book, i) => (
           <div
             key={i}
-            className='h-28 grid mb-4 border border-gray-200 rounded overflow-hidden shadow-sm'
+            className='h-24 grid border-b border-gray-200'
             style={{ gridTemplateColumns: 'auto 1fr auto' }}
           >
-            <div className='flex h-full w-full'>
-              <div className='w-20 h-full'>
-                <img className='h-full w-20' src={book.cover} alt={book.name} />
-              </div>
+            <div className='flex h-full w-full items-center'>
+              <img
+                className='h-18 w-14 rounded'
+                src={book.cover}
+                alt={book.name}
+              />
             </div>
-            <div className='p-2 pl-4'>
+            <div className='ml-4 pr-2 py-2 h-full'>
               <div className='font-semibold'>{book.name}</div>
               <div className=''>{book.author}</div>
             </div>

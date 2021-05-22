@@ -13,3 +13,7 @@ body {
 .shadow-around {
   box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.12), 0 3px 1px 0 rgba(0, 0, 0, 0.04);
 }
+
+.card {
+  @apply border border-primary-default border-opacity-20 shadow;
+}
