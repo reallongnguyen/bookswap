@@ -15,5 +15,5 @@ body {
 }
 
 .card {
-  @apply border border-primary-default border-opacity-20 shadow;
+  @apply border shadow;
 }

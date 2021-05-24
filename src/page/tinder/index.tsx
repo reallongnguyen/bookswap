@@ -222,7 +222,7 @@ const Tinder: FC = () => {
               </div>
             </div>
           </div>
-          <div className='mt-12 card p-3 rounded-xl relative'>
+          <div className='mt-12 border-gray-300 card  p-3 rounded-xl relative'>
             <div className='flex items-center bg-gray-50 absolute top-0 transform -translate-y-1/2 px-1'>
               <img
                 className='w-8 h-8 rounded-full border-primary-default border-opacity-30 border'
